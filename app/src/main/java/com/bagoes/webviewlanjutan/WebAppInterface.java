@@ -23,7 +23,7 @@ public class WebAppInterface {
     }
 
     @JavascriptInterface
-    public void showSns()
+    public void showSms()
     {
         Intent intent = new Intent(Intent.ACTION_MAIN);
         intent.addCategory(Intent.CATEGORY_APP_MESSAGING);

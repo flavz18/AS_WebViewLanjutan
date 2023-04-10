@@ -13,7 +13,8 @@ public class MainActivity extends AppCompatActivity {
     private WebView _webView1;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setDomStorageEnabled(true);
 
         WebAppInterface webAppInterface = new WebAppInterface(this,MainActivity.this);
-        _webView1.addJavascriptInterface(webAppInterface, "android");
+        _webView1.addJavascriptInterface(webAppInterface, "Android");
 
         String url = "https://202102282bagussaptoaji.000webhostapp.com";
         _webView1.loadUrl(url);
