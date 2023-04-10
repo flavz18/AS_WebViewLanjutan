@@ -1,6 +1,8 @@
 package com.bagoes.webviewlanjutan;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.webkit.JavascriptInterface;
@@ -28,5 +30,24 @@ public class WebAppInterface {
         Intent intent = new Intent(Intent.ACTION_MAIN);
         intent.addCategory(Intent.CATEGORY_APP_MESSAGING);
         _context.startActivity(intent);
+    }
+
+    @JavascriptInterface
+    public void showCalcu()
+    {
+        try
+        {
+            Intent kalkulatorIntent = new Intent(Intent.ACTION_MAIN);
+            kalkulatorIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+
+            ComponentName cn = new ComponentName("com.miui.calculator", "com.miui.calculator.cal.CalculatorActivity");
+            kalkulatorIntent.setComponent(cn);
+
+            _context.startActivity(kalkulatorIntent);
+        }
+            catch (ActivityNotFoundException anfe)
+        {
+            Toast.makeText(_context.getApplicationContext(), "Aplikasi Tidak Ditemukan", Toast.LENGTH_SHORT).show();
+        }
     }
 }
