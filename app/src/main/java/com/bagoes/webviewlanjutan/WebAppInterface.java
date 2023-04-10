@@ -33,7 +33,7 @@ public class WebAppInterface {
     }
 
     @JavascriptInterface
-    public void showCalcu()
+    public void showCalculator()
     {
         try
         {
