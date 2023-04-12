@@ -31,23 +31,5 @@ public class WebAppInterface {
         intent.addCategory(Intent.CATEGORY_APP_MESSAGING);
         _context.startActivity(intent);
     }
-
-    @JavascriptInterface
-    public void showCalculator()
-    {
-        try
-        {
-            Intent kalkulatorIntent = new Intent(Intent.ACTION_MAIN);
-            kalkulatorIntent.addCategory(Intent.CATEGORY_LAUNCHER);
-
-            ComponentName cn = new ComponentName("com.miui.calculator", "com.miui.calculator.cal.CalculatorActivity");
-            kalkulatorIntent.setComponent(cn);
-
-            _context.startActivity(kalkulatorIntent);
-        }
-            catch (ActivityNotFoundException anfe)
-        {
-            Toast.makeText(_context.getApplicationContext(), "Aplikasi Tidak Ditemukan", Toast.LENGTH_SHORT).show();
-        }
-    }
+    
 }
